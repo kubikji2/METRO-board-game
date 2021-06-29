@@ -338,10 +338,10 @@ Lidé, kteří se před válkou pohovali kolem soustruhů nebo někdy v ruce dr�
 - Velkoobchodník
   - Nehledě na roli je v nabídce zboží o jeden výrobek navíc
 
+- Bývalý zaměstnanec metra
+  - TODO
+  - ??? Je-li členem expedice, může se hráč při průzkumu vedlejších tunelů rozhodnout kartu zahodit, bez aplikace efektů.
 
- 
-
-TODO
 
 #### Lékaři
 
@@ -369,6 +369,36 @@ Po návratu z expedice se může hráč rozhodnout krabice rozbalit, čímž ztr
 Je-li na kartě vyobrazen obsah z METRA, líže a odkrývá nový materiál dokud nenarazí na obsah z povrchu nebo univerzální.
 Nopak otevírá-li se tržiště, pak jsou stejným způsobem nahrazeny všechny karty z povrchu.
 
+## Herní plán
+
+Herní plán je tvořen mapou metra skládající se ze stanic a tunelů mezi nimi.
+Stanice jsou posledními výspami civilizace s ostrůvky života.
+V těsné blízkosti stanic, se se tu tam nachází technické místnosti, servisní tunely nebo jiné temné otvory skrývající tajemství.
+Tunely spojující stanice se topí v naprosté tmy, se hemží mutanty, anomáliemi, radiací prosakující z povrchu, nebo jsou až podezřele tiché.
+
+### Stanice jako herní prvek
+
+Stanice je 3D vytištěný plastový dílek obdélnékového tvaru obsahující:
+
+- zahloubení pro název
+- tři otvory pro vliv/spokojenost
+- místa pro stavbu budov v počtu odpovídajícím velikosti obytného prostoru
+- výstupek/výstupky pro napojení na tunely
+- rozhraní pro další přídavné díly (ideologie? sklad? místo pro parkování karavany?)
+
+## Karavana
+
+- TODO: Co bude převážet?
+  - Budou zásoby v každé stanici zvlášť?
+
+## Expedice
+
+Expedice slouží k prozkoumávání okolí stanic.
+Tunely skrývají nejedno nebezpečí, ať už se jedná o průsaky radiace z povrchu, anomálie nebo mutanty, v nesčetných odbočkách se mohou skrávat všelijaké servisní místnosti plné užitečného materiálu, zásob nebo dokonce nábojů, a nebo jsou domovem krvelačných monster, která expedice probere ze spánku.
+
+Expedice je skupina postav, které hráč v přípavě vybere.
+Jednotlivá povolání členů expedice pomohou k vyřešení nepředvídatelných situací.
+Každý člen expedice může nést dva předměty (náboje, filtry, jídlo apod.), které mohou být užitečné v nepředvídatelných situacích za zavřenými dveřmi.
 
 
 
