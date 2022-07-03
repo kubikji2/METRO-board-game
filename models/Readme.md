@@ -12,7 +12,7 @@ The `stl` format is used for resulting models since it is both natively [support
 
 ## How to manage git-submodules
 
-Afte cloning this repository, run:
+After cloning this repository, run:
 
 ```shell
 git submodule init 
@@ -25,5 +25,13 @@ git submodule update
 ```
 
 to init local packages and update them.
+
+To get the most recent version of the qit-submodules, run:
+
+```shell
+git submodule update --remote
+```
+
+assuming that `.gitmodules` has defined branch for the submodule.
 
 For more information see [git manual](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
