@@ -35,3 +35,11 @@ git submodule update --remote
 assuming that `.gitmodules` has defined branch for the submodule.
 
 For more information see [git manual](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
+
+## Basic idea about modeling source files structure
+
+- use libraries for geometries -- mainly use Q++
+- create additional library containing the board-game specific elements such as additional symbols or geometries
+  - geometries that can be used outside of this board-game should be implemented in Q++
+- create a single file containing all of the constants defining the game-board dimensions
+- include constants-file and libraries in files modeling the game elements
