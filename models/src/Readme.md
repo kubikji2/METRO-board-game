@@ -34,9 +34,9 @@ Directory hiearchy:
   - contain all important constants in one file
   - [x] create file
   - [ ] add constant from the previous srcs
-- [ ] symbols
+- [x] symbols
   - [x] create wrappers for the existing symbols in `qpp_symbols`
-  - [ ] move the symbols from links to the symbols
+  - [x] move the symbols from links to the symbols
   - [x] move spanner from buildings
   - [x] unify the size to some reasonable value
     - this size has multilier for particular applications (building, danger-triangle, etc.)
