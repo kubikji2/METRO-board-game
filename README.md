@@ -1,2 +1,3 @@
 # METRO-board-game
-My idea about METRO board game, fully 3D printable.
+
+Open-source METRO board game with fully 3D printable game-pieces modelled using OpenSCAD.
