@@ -9,6 +9,8 @@ mxx_2eps = 2*mxx_eps;
 mxx_b_r = 2.5;
 mxx_b_a = 10;
 mxx_b_depth = 1.5;
+// building symbol radius
+mxx_b_sr = 8;
 
 // symbols
 mxx_s_r = 5;

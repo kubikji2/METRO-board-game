@@ -37,16 +37,16 @@ Directory hiearchy:
 - [ ] symbols
   - [x] create wrappers for the existing symbols in `qpp_symbols`
   - [ ] move the symbols from links to the symbols
-  - [ ] move spanner from buildings
-  - [ ] unify the size to some reasonable value
+  - [x] move spanner from buildings
+  - [x] unify the size to some reasonable value
     - this size has multilier for particular applications (building, danger-triangle, etc.)
 - [ ] graphics
   - [ ] back-up pig
   - [ ] back-up hens
   - [ ] add 7.62x39 ammo
-- [ ] buildings - `mxx_buildings.scad`
+- [x] buildings - `mxx_buildings.scad`
   - [x] back-up building base
-  - [ ] back-up those few buildings
+  - [x] back-up those few buildings
 - [ ] plan
   - [ ] TODO
 
