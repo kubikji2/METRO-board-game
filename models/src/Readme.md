@@ -35,7 +35,7 @@ Directory hiearchy:
   - [x] create file
   - [ ] add constant from the previous srcs
 - [ ] symbols
-  - [ ] create wrappers for the existing symbols in `qpp_symbols`
+  - [x] create wrappers for the existing symbols in `qpp_symbols`
   - [ ] move the symbols from links to the symbols
   - [ ] move spanner from buildings
   - [ ] unify the size to some reasonable value
