@@ -32,6 +32,7 @@ Directory hiearchy:
 
 - [ ] `mxx_constants.scad`
   - contain all important constants in one file
+  - [x] create file
   - [ ] add constant from the previous srcs
 - [ ] symbols
   - [ ] create wrappers for the existing symbols in `qpp_symbols`
