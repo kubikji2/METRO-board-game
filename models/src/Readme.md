@@ -45,6 +45,7 @@ Directory hiearchy:
   - [ ] back-up hens
   - [ ] add 7.62x39 ammo
 - [ ] buildings - `mxx_buildings.scad`
+  - [x] back-up building base
   - [ ] back-up those few buildings
 - [ ] plan
   - [ ] TODO
