@@ -102,3 +102,23 @@ module spanner_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn,double_sided=false)
         }
     }
 }
+
+
+// mental anomaly symbol a.k.a. capital greek Psi
+// '-> "r" is radius
+// '-> "h" is height
+// '-> "$fn" is just $fn
+module mental_anomaly_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn)
+{
+
+    %cylinder(r=r,h=h);
+
+    _d = 2*r;
+    _fs = 0.75*_d;
+    
+    translate([0,-0.1*_d,0])
+        color([0.25,0.25,0.25])
+            linear_extrude(h)
+                text("\u03A8",font = "Times New Roman:style=Bold", size = _fs, halign = "center", valign = "center");
+    
+}
