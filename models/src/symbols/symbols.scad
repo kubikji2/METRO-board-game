@@ -15,3 +15,22 @@ module biohazard_symbol(r=mxx_s_r,h=mxx_s_h)
     qpp_biohazard_symbol(r=r,h=h);
 }
 
+// wierd combination of radiation and biohazzard
+// '-> using Q++
+module uknown_danger(r=mxx_s_r,h=mxx_s_h)
+{
+    difference() 
+    {
+        biohazard_symbol(r=r,h=h);
+        translate([0, 0, -mxx_eps])
+            radiation_symbol(r=r,h=h+mxx_2eps);
+    }
+
+    difference() 
+    {
+        radiation_symbol(r=r,h=h);
+        translate([0, 0, -mxx_eps])
+            biohazard_symbol(r=r,h=h+mxx_2eps);
+    }
+
+}
