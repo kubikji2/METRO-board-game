@@ -111,8 +111,6 @@ module spanner_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn,double_sided=false)
 module mental_anomaly_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn)
 {
 
-    %cylinder(r=r,h=h);
-
     _d = 2*r;
     _fs = 0.75*_d;
     
@@ -121,4 +119,21 @@ module mental_anomaly_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn)
             linear_extrude(h)
                 text("\u03A8",font = "Times New Roman:style=Bold", size = _fs, halign = "center", valign = "center");
     
+}
+
+// '-> "r" is radius
+// '-> "h" is height
+// '-> "$fn" is just $fn
+module uknown_danger_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn)
+{
+
+    //%cylinder(r=r,h=h);
+
+    _d = 2*r;
+    _fs = 0.95*_d;
+
+    translate([0,-0.025*_d,0])
+        color([0.25,0.25,0.25])
+            linear_extrude(h)
+                text("?",font = "Times New Roman:style=Bold", size = _fs, halign = "center", valign = "center");
 }
