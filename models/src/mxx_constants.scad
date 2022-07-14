@@ -38,3 +38,7 @@ mxx_dt_l = 25;
 mxx_dt_r = mxx_b_a/2;
 // '-> triangle holde depth
 mxx_dt_depth = mxx_b_depth;
+
+// station parameters
+// connector radius
+mxx_s_cr = 4;

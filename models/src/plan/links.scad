@@ -11,10 +11,24 @@ module __building_hole()
 }
 
 // connectors to the stations
-// '-> orientation defines which direction is the station oriented
-module __link_connetor()
+// '-> reversed switch the connector orientation from [1,0,0] to [-1,0,0]
+module __link_connetor(reversed=false)
 {
+    _a = mxx_l_w;
+    _t = mxx_l_hu-mxx_z_tol;
+    _r = mxx_s_cr+mxx_xy_tol;
+    // ring
+    qpp_ring(h=_t,r=_r, D=_a, $fn=mxx_fn);
 
+    difference()
+    {
+        _x_off = reversed ? _a/4 : -_a/4;
+        translate([-_a/4 + _x_off,-_a/2,0])
+            cube([_a/2,_a,_t]);
+        
+        translate([0,0,-mxx_eps])
+            cylinder(r=_r, h=_t+mxx_2eps, $fn=mxx_fn);       
+    }
 }
 
 // single link segment
@@ -55,8 +69,8 @@ module __link_segment(has_hole=true, is_higher=true)
 // '-> centered in xy-plane
 module __link_danger_segment(is_higher=true)
 {
-    _x = mxx_l_w;
-    _y = mxx_dt_l;
+    _x = mxx_dt_l;
+    _y = mxx_l_w;
     _huc = is_higher ? 3 : 2;
     _z = _huc*mxx_l_hu;
 
