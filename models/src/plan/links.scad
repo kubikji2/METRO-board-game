@@ -87,8 +87,8 @@ module __link_danger_segment(is_higher=true)
     _huc = is_higher ? 3 : 2;
     _z = _huc*mxx_l_hu;
 
-    _d = 2*mxx_dt_r + mxx_xy_tol;
-    _h = mxx_dt_depth + mxx_z_tol + mxx_eps;
+    _d = 2*mxx_dt_cr + mxx_xy_tol;
+    _h = mxx_dt_cdepth + mxx_z_tol + mxx_eps;
     
     difference()
     {

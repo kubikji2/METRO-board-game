@@ -34,10 +34,27 @@ mxx_t_r = mxx_b_a/2;
 // dange triangle blok
 // '-> length
 mxx_dt_l = 25;
-// '-> triangle hole radius
-mxx_dt_r = mxx_b_a/2;
-// '-> triangle holde depth
-mxx_dt_depth = mxx_b_depth;
+// '-> triangle connector hole radius
+mxx_dt_cr = mxx_b_a/2;
+// '-> triangle hole depth
+mxx_dt_cdepth = mxx_b_depth;
+// '-> triangle symbol radius
+mxx_dt_sr = mxx_b_a;
+// '-> trangle symbol thickness
+mxx_dt_st = 1;
+// '-> triangle rounding radius
+mxx_dt_rr = mxx_b_r;
+// '-> triangle thickness
+mxx_dt_t = mxx_l_hu;
+// '-> triangle connector height
+mxx_dt_ch = 2*mxx_dt_cdepth - 2*mxx_z_tol;
+
+MXX_DT_BIOHAZARD = "biohazard";
+MXX_DT_RADIATION = "radiation";
+MXX_DT_ANOMALY   = "anomaly";
+MXX_DT_OTHER     = "other";
+MXX_DT_UKNOWN    = "uknown";
+MXX_DT_DANGER    = "danger";
 
 // station parameters
 // connector radius
