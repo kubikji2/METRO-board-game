@@ -48,7 +48,12 @@ Directory hiearchy:
   - [x] back-up building base
   - [x] back-up those few buildings
 - [ ] plan
-  - [ ] TODO
+  - [ ] redo links
+  - [ ] redo the danger triangles
+    - [ ] include symbols from the `symbols.scad`
+    - [ ] create multicolor variant of triangles
+  - [ ] redo stations
+  - [ ] redo tunnels
 
 ### new tasks
 
