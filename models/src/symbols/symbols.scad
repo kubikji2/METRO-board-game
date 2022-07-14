@@ -115,9 +115,8 @@ module mental_anomaly_symbol(r=mxx_s_r,h=mxx_s_h,fn=$fn)
     _fs = 0.75*_d;
     
     translate([0,-0.1*_d,0])
-        color([0.25,0.25,0.25])
-            linear_extrude(h)
-                text("\u03A8",font = "Times New Roman:style=Bold", size = _fs, halign = "center", valign = "center");
+        linear_extrude(h)
+            text("\u03A8",font = "Times New Roman:style=Bold", size = _fs, halign = "center", valign = "center");
     
 }
 
@@ -132,9 +131,8 @@ module uknown_danger_symbol(r=mxx_s_r,h=mxx_s_h,fn=$fn)
     _fs = 0.95*_d;
 
     translate([0,-0.025*_d,0])
-        color([0.25,0.25,0.25])
-            linear_extrude(h)
-                text("?",font = "Times New Roman:style=Bold", size = _fs, halign = "center", valign = "center");
+        linear_extrude(h)
+            text("?",font = "Times New Roman:style=Bold", size = _fs, halign = "center", valign = "center");
 }
 
 // danger symbol a.k.a exclamation mark
@@ -148,7 +146,6 @@ module danger_symbol(r=mxx_s_r,h=mxx_s_h,fn=$fn)
     _fs = 0.95*_d;
 
     translate([0,-0.025*_d,0])
-        color([0.25,0.25,0.25])
-            linear_extrude(h)
-                text("!",font = "Times New Roman:style=Bold", size = _fs, halign = "center", valign = "center");
+        linear_extrude(h)
+            text("!",font = "Times New Roman:style=Bold", size = _fs, halign = "center", valign = "center");
 }
