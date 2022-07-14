@@ -53,6 +53,7 @@ module round_square(diam = ROUNDING_D, a = SH_SIZE, h = HOLE_DEPTH)
     
 }
 
+/*
 module round_rectangle(diam = ROUNDING_D, a = SH_SIZE, b = SH_SIZE, h = HOLE_DEPTH)
 {
     _d = diam;
@@ -134,7 +135,7 @@ module connection()
     cylinder(d=DT_HOLE-2*TOL,h=HOLE_DEPTH);
 }
 
-
+*/
 
 module ring(inner_diam = 2*R_RADIUS+TOL, outer_diam = 2*(R_RADIUS+SH_BORDER), h = H_UNIT)
 {
@@ -148,6 +149,7 @@ module ring(inner_diam = 2*R_RADIUS+TOL, outer_diam = 2*(R_RADIUS+SH_BORDER), h 
     }
 }
 
+/*
 module joint(height=2, size=3, left_holes = 2, right_holes = 2)
 {
     l = 2*size*JOINT_UNIT + 2*R_RADIUS + 4*SH_BORDER + DT_SIZE + 2*SH_BORDER;
@@ -193,20 +195,21 @@ module joint(height=2, size=3, left_holes = 2, right_holes = 2)
     
     for(i=[0:size-1])
     {
-        if(i<left_holes){
-                translate([offset+SH_SIZE/2+i*step,0,(height-1)*H_UNIT-eps_2])
-                    cylinder(d=SH_SIZE-2*TOL,h=H_UNIT);
-            }
-            if(i<right_holes){
-                translate([l-offset-SH_SIZE/2 - i*step,0,(height-1)*H_UNIT-eps_2])
-                    cylinder(d=SH_SIZE-2*TOL,h=H_UNIT);
-            }
+        #if(i<left_holes){
+            translate([offset+SH_SIZE/2+i*step,0,(height-1)*H_UNIT-eps_2])
+                cylinder(d=SH_SIZE-2*TOL,h=H_UNIT);
+        }
+        if(i<right_holes){
+            translate([l-offset-SH_SIZE/2 - i*step,0,(height-1)*H_UNIT-eps_2])
+                cylinder(d=SH_SIZE-2*TOL,h=H_UNIT);
+        }
         
     }
     
     ring();
     translate([l,0,0]) ring();
 }
+*/
 
 module station(size = 5)
 {
@@ -302,14 +305,15 @@ module servis_tunel(length=2,width=1)
 //translate([0,15,0]) station_name("Moskevskaja");
 
 //color([0.3,0.3,0.3])
-station(5);
+//station(5);
 
+/*
 translate([0,45,0]) station(6);
 translate([0,90,0]) station(7);
 translate([95,0,0]) station(7);
 translate([110,45,0]) station(6);
 translate([120,90,0]) station(5);
-
+*/
 
 //translate([ST_LINK_LEN+SH_BORDER,SH_SIZE-1.5*SH_BORDER,H_UNIT-HOLE_DEPTH + eps_2]) station_name();
 
@@ -335,13 +339,13 @@ translate([0,3*20,0]) servis_tunel(1,2);
 
 //biohazard_triangle();
 
-/*
+
 translate([0,1*20,0]) joint(2,2,2,1);
 translate([0,2*20,0]) joint(2,2,1,2);
 translate([0,3*20,0]) joint(3,2,2,1);
 translate([0,4*20,0]) joint(3,3,3,2);
 translate([0,5*20,0]) joint(3,2,1,0);
-*/
+
 /*
 for(i=[0:10])
 {

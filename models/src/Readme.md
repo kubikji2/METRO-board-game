@@ -50,11 +50,11 @@ Directory hiearchy:
 - [ ] plan
   - [x] redo links
     - [x] todo make consequentive holes closer together
-  - [ ] redo the danger triangles
-    - [ ] include symbols from the `symbols.scad`
-    - [ ] create multicolor variant of triangles
+  - [x] redo the danger triangles
+    - [x] include symbols from the `symbols.scad`
   - [ ] redo stations
-  - [ ] redo tunnels
+    - [ ] unify the dimensions
+  - [ ] redo (service) tunnels
 
 ### new tasks
 
@@ -64,3 +64,5 @@ Directory hiearchy:
   - [ ] consider adding double joint in place of the tunnel danger
   - [ ] model the surface endings
   - [ ] model the destroyed ending
+- [ ] plan - danger triangles
+  - [ ] create multicolor variant of triangles
