@@ -6,9 +6,9 @@ include <../qpp_lib.scad>
 // '-> "h" is height
 // '-> "$fn" is just $fn
 // NOTE: using Q++
-module radiation_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn)
+module radiation_symbol(r=mxx_s_r,h=mxx_s_h,fn=$fn)
 {
-    qpp_radiation_symbol(r=r,h=h,$fn=$fn);
+    qpp_radiation_symbol(r=r,h=h,$fn=fn);
 }
 
 // biohazard symbol
@@ -16,9 +16,9 @@ module radiation_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn)
 // '-> "h" is height
 // '-> "$fn" is just $fn
 // NOTE: using Q++
-module biohazard_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn)
+module biohazard_symbol(r=mxx_s_r,h=mxx_s_h,fn=$fn)
 {
-    qpp_biohazard_symbol(r=r,h=h,$fn=$fn);
+    qpp_biohazard_symbol(r=r,h=h,$fn=fn);
 }
 
 // wierd combination of radiation and biohazard
@@ -26,20 +26,20 @@ module biohazard_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn)
 // '-> "h" is height
 // '-> "$fn" is just $fn
 // NOTE: using Q++
-module uknown_danger(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn)
+module uknown_danger(r=mxx_s_r,h=mxx_s_h,fn=$fn)
 {
     difference() 
     {
-        biohazard_symbol(r=r,h=h,$fn=$fn);
+        biohazard_symbol(r=r,h=h,$fn=fn);
         translate([0, 0, -mxx_eps])
-            radiation_symbol(r=r,h=h+mxx_2eps,$fn=$fn);
+            radiation_symbol(r=r,h=h+mxx_2eps,$fn=fn);
     }
 
     difference() 
     {
-        radiation_symbol(r=r,h=h,$fn=$fn);
+        radiation_symbol(r=r,h=h,$fn=fn);
         translate([0, 0, -mxx_eps])
-            biohazard_symbol(r=r,h=h+mxx_2eps,$fn=$fn);
+            biohazard_symbol(r=r,h=h+mxx_2eps,$fn=fn);
     }
 
 }
@@ -49,7 +49,7 @@ module uknown_danger(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn)
 // '-> "h" is height
 // '-> "$fn" is just $fn
 // '-> "double_sided"=true add second head
-module spanner_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn,double_sided=false)
+module spanner_symbol(r=mxx_s_r,h=mxx_s_h,fn=$fn,double_sided=false)
 {
     // parameters
     _lf = 0.8;
@@ -74,16 +74,16 @@ module spanner_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn,double_sided=false)
         union()
         {
             // main enlargement
-            cylinder(d=_d,h=h,$fn=$fn);
+            cylinder(d=_d,h=h,$fn=fn);
             // handle
             translate([0,-_t/2,0]) cube([_l,_t,h]);
             // optional secondary enlargement
             if (double_sided)
             {
-                translate([_l,0,0]) cylinder(d=_d,h=h,$fn=$fn);    
+                translate([_l,0,0]) cylinder(d=_d,h=h,$fn=fn);    
             }
             // circular handle end
-            translate([_l,0,0]) cylinder(d=_t,h=h,$fn=$fn);
+            translate([_l,0,0]) cylinder(d=_t,h=h,$fn=fn);
         }
 
         // front bolt-head hole
@@ -108,7 +108,7 @@ module spanner_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn,double_sided=false)
 // '-> "r" is radius
 // '-> "h" is height
 // '-> "$fn" is just $fn
-module mental_anomaly_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn)
+module mental_anomaly_symbol(r=mxx_s_r,h=mxx_s_h,fn=$fn)
 {
 
     _d = 2*r;
@@ -125,7 +125,7 @@ module mental_anomaly_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn)
 // '-> "r" is radius
 // '-> "h" is height
 // '-> "$fn" is just $fn
-module uknown_danger_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn)
+module uknown_danger_symbol(r=mxx_s_r,h=mxx_s_h,fn=$fn)
 {
 
     _d = 2*r;
@@ -141,7 +141,7 @@ module uknown_danger_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn)
 // '-> "r" is radius
 // '-> "h" is height
 // '-> "$fn" is just $fn
-module danger_symbol(r=mxx_s_r,h=mxx_s_h,$fn=mxx_fn)
+module danger_symbol(r=mxx_s_r,h=mxx_s_h,fn=$fn)
 {
 
     _d = 2*r;
