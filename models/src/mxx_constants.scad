@@ -28,6 +28,13 @@ mxx_l_w = 2*mxx_l_border + mxx_b_a;
 // '-> link building hole/height
 mxx_l_bh = mxx_b_depth;
 
-// tunelSH_SIZEs
-
+// tunel parameters
 mxx_t_r = mxx_b_a/2;
+
+// dange triangle blok
+// '-> length
+mxx_dt_l = 25;
+// '-> triangle hole radius
+mxx_dt_r = mxx_b_a/2;
+// '-> triangle holde depth
+mxx_dt_depth = mxx_b_depth;

@@ -52,9 +52,25 @@ module __link_segment(has_hole=true, is_higher=true)
 }
 
 // segment for the danger triangle
-module __link_danger_segment()
+// '-> centered in xy-plane
+module __link_danger_segment(is_higher=true)
 {
+    _x = mxx_l_w;
+    _y = mxx_dt_l;
+    _huc = is_higher ? 3 : 2;
+    _z = _huc*mxx_l_hu;
 
+    _d = 2*mxx_dt_r + mxx_xy_tol;
+    _h = mxx_dt_depth + mxx_z_tol + mxx_eps;
+    
+    difference()
+    {
+        translate([-_x/2,-_y/2,0])
+            cube([_x,_y,_z]);
+
+        translate([0,0,-mxx_eps])
+            cylinder(d=_d, h=_h, $fn=mxx_fn);
+    }
 }
 
 // destroyed terminal
