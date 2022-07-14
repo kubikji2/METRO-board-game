@@ -4,9 +4,25 @@ include <../qpp_lib.scad>
 // hole for the building
 module __building_hole()
 {
+    _a = mxx_b_a + mxx_xy_tol;
+
     // main shape for the building
+    translate([-_a/2, -_a/2, -mxx_eps])
+        qpp_cylindrocube([_a, _a, mxx_b_depth, mxx_b_r+mxx_eps],$fn=mxx_fn);
 
     // ellypsoid holes for better building removing
+    _sx = mxx_b_a-2*mxx_b_r;
+    _sy = 1.5*mxx_b_depth;
+    _sz = mxx_b_depth;
+
+    translate([0,-mxx_b_a/2,0])
+        resize([_sx, _sy, _sz])
+            sphere(r=1,$fn=mxx_fn);
+    
+    translate([0,+mxx_b_a/2,0])
+        resize([_sx, _sy, _sz])
+            sphere(r=1,$fn=mxx_fn);
+
 
 }
 
@@ -39,9 +55,7 @@ module __link_segment(has_hole=true, is_higher=true)
     _huc = 1 + (is_higher ? 1 : 0) + (has_hole ? 0 : 1);
     _h = _huc*mxx_l_hu - (has_hole ? mxx_z_tol : 0);
     _a = mxx_l_w;
-    _app = mxx_b_a + mxx_xy_tol;
-    echo(str([_h,_huc]));
-
+    
     qpp_difference(has_hole)
     {
         // main shape
@@ -49,8 +63,7 @@ module __link_segment(has_hole=true, is_higher=true)
             cube([_a,_a,_h]);
         
         // cylindrocube for the building
-        translate([-_app/2, -_app/2, -mxx_eps])
-            qpp_cylindrocube([_app, _app, mxx_b_depth, mxx_b_r+mxx_eps],$fn=mxx_fn);
+        __building_hole();
         
     }   
 
@@ -99,7 +112,40 @@ module __link_destroyed()
 // '-> "left_holes" is the number of holes within the segment associated with the left station
 // '-> "right_holes" is the number of holes within the segment associated with the right station
 // '-> "thick" defines whethe
-module link(left_len=3, right_len=3, left_holes=2, right_holdes=1, thick=false)
+module link(left_len=3, right_len=2, left_holes=2, right_holes=1, thick=false)
 {
+
+    _max_idx = max([left_len,right_len]);
+
+    // inner danger triangle sign
+    __link_danger_segment(is_higher=thick);
+
+    for(i=[0:_max_idx])
+    {
+        // translation from the center
+        _off = mxx_dt_l/2 + mxx_l_w/2 + i*mxx_l_w;
+
+        // left part
+        translate([-_off,0,0])
+        if (i<left_len)
+        {
+            __link_segment(has_hole=(i > left_len-left_holes-1), is_higher=thick);
+        }
+        else if (left_len==i)
+        {
+            __link_connetor(reversed=true);
+        }
+
+        // right part
+        translate([+_off,0,0])
+        if (i<right_len)
+        {
+            __link_segment(has_hole=(i > right_len-right_holes-1), is_higher=thick);
+        }
+        else if (right_len==i)
+        {
+            __link_connetor(reversed=false);
+        }
+    }
 
 }
