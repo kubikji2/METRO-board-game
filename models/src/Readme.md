@@ -48,7 +48,8 @@ Directory hiearchy:
   - [x] back-up building base
   - [x] back-up those few buildings
 - [ ] plan
-  - [ ] redo links
+  - [x] redo links
+    - [x] todo make consequentive holes closer together
   - [ ] redo the danger triangles
     - [ ] include symbols from the `symbols.scad`
     - [ ] create multicolor variant of triangles
@@ -58,3 +59,8 @@ Directory hiearchy:
 ### new tasks
 
 - TODO
+
+- [ ] plan-links
+  - [ ] consider adding double joint in place of the tunnel danger
+  - [ ] model the surface endings
+  - [ ] model the destroyed ending

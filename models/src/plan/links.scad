@@ -123,7 +123,7 @@ module link(left_len=3, right_len=2, left_holes=2, right_holes=1, thick=false)
     for(i=[0:_max_idx])
     {
         // translation from the center
-        _off = mxx_dt_l/2 + mxx_l_w/2 + i*mxx_l_w;
+        _off = mxx_dt_l/2 + mxx_l_w/2 + i*(mxx_l_w-mxx_l_border+mxx_xy_tol);
 
         // left part
         translate([-_off,0,0])
