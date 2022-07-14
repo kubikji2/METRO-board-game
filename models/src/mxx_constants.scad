@@ -27,3 +27,7 @@ mxx_l_border = 2;
 mxx_l_w = 2*mxx_l_border + mxx_b_a;
 // '-> link building hole/height
 mxx_l_bh = mxx_b_depth;
+
+// tunelSH_SIZEs
+
+mxx_t_r = mxx_b_a/2;
