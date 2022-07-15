@@ -28,10 +28,7 @@ mxx_l_w = 2*mxx_l_border + mxx_b_a;
 // '-> link building hole/height
 mxx_l_bh = mxx_b_depth;
 
-// tunel parameters
-mxx_t_r = mxx_b_a/2;
-
-// dange triangle blok
+// danger triangle blok
 // '-> length
 mxx_dt_l = 25;
 // '-> triangle connector hole radius
@@ -58,11 +55,19 @@ MXX_DT_UKNOWN    = "uknown";
 MXX_DT_DANGER    = "danger";
 
 // station parameters
-// connector radius
+// '-> station connector radius
 mxx_s_cr = 4;
-// connector height
+// '-> station connector height
 mxx_s_ch = 5*mxx_l_hu;
-// station name len
+// '-> station connector length
+mxx_s_cl = mxx_l_w;
+// '-> station name len
 mxx_s_nl = 5*mxx_b_a+6*mxx_l_border;
-// station name thickness
+// '-> station name thickness
 mxx_s_nt = 1;
+
+// tunel parameters
+// '-> radius
+mxx_t_r = mxx_b_a/2;
+// '-> length
+mxx_t_cl = mxx_l_w;

@@ -58,7 +58,7 @@ module station(size=4)
     cylinder(h=mxx_s_ch, d=2*mxx_s_cr-mxx_xy_tol, $fn=mxx_fn);
     
     // cube from the link to the main body
-    _ll = _cld/2 + mxx_l_w/2;
+    _ll = mxx_t_cl; 
     translate([0,-mxx_s_cr, 0])
         cube([_ll,2*mxx_s_cr, _hc]);
 
