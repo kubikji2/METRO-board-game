@@ -1,30 +1,6 @@
 include <../mxx_constants.scad>
 include <../qpp_lib.scad>
-
-// hole for the building
-module __building_hole()
-{
-    _a = mxx_b_a + mxx_xy_tol;
-
-    // main shape for the building
-    translate([-_a/2, -_a/2, -mxx_eps])
-        qpp_cylindrocube([_a, _a, mxx_b_depth, mxx_b_r+mxx_eps],$fn=mxx_fn);
-
-    // ellypsoid holes for better building removing
-    _sx = mxx_b_a-2*mxx_b_r;
-    _sy = 1.5*mxx_b_depth;
-    _sz = mxx_b_depth;
-
-    translate([0,-mxx_b_a/2,0])
-        resize([_sx, _sy, _sz])
-            sphere(r=1,$fn=mxx_fn);
-    
-    translate([0,+mxx_b_a/2,0])
-        resize([_sx, _sy, _sz])
-            sphere(r=1,$fn=mxx_fn);
-
-
-}
+include <buildings.scad>
 
 // connectors to the stations
 // '-> reversed switch the connector orientation from [1,0,0] to [-1,0,0]
@@ -62,8 +38,8 @@ module __link_segment(has_hole=true, is_higher=true)
         translate([-_a/2,-_a/2,0])
             cube([_a,_a,_h]);
         
-        // cylindrocube for the building
-        __building_hole();
+        // cylindrocube and additional stuff for the building
+        building_base_hole();
         
     }   
 
