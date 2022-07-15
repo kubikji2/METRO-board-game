@@ -55,7 +55,7 @@ Directory hiearchy:
   - [x] redo stations
     - [x] unify the dimensions
     - [x] redo station names
-  - [ ] redo (service) tunnels
+  - [x] redo (service) tunnels
 
 ### new tasks
 
@@ -69,5 +69,6 @@ Directory hiearchy:
   - [ ] create multicolor variant of triangles
 - [ ] plan - stations
   - [ ] make station names multimaterial
-  - [ ] make stations caps for ideologies
+  - [ ] model stations caps for ideologies
+  - [ ] model interchange station variants
 
