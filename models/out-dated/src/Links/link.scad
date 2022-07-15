@@ -53,7 +53,7 @@ module round_square(diam = ROUNDING_D, a = SH_SIZE, h = HOLE_DEPTH)
     
 }
 
-/*
+
 module round_rectangle(diam = ROUNDING_D, a = SH_SIZE, b = SH_SIZE, h = HOLE_DEPTH)
 {
     _d = diam;
@@ -73,7 +73,7 @@ module round_rectangle(diam = ROUNDING_D, a = SH_SIZE, b = SH_SIZE, h = HOLE_DEP
     
 }
 
-
+/*
 module biohazard_triangle(diam = 2*ROUNDING_D, a = DT_SIZE, h = HOLE_DEPTH)
 {
     difference()
@@ -211,6 +211,7 @@ module joint(height=2, size=3, left_holes = 2, right_holes = 2)
 }
 */
 
+/*
 module station(size = 5)
 {
     _r = R_RADIUS-TOL;
@@ -256,7 +257,9 @@ module station(size = 5)
     }
     
 }
+*/
 
+/*
 module station_name(name="Prazskaja", font_size = 7)
 {
     name_size = 5*(SH_BORDER+SH_SIZE)-SH_BORDER;
@@ -268,6 +271,7 @@ module station_name(name="Prazskaja", font_size = 7)
         linear_extrude(HOLE_DEPTH)
             text(name,valign="center", halign="center", size = font_size);
 }
+*/
 
 module servis_tunel(length=2,width=1)
 {
@@ -307,13 +311,13 @@ module servis_tunel(length=2,width=1)
 //color([0.3,0.3,0.3])
 //station(5);
 
-/*
+
 translate([0,45,0]) station(6);
 translate([0,90,0]) station(7);
 translate([95,0,0]) station(7);
 translate([110,45,0]) station(6);
 translate([120,90,0]) station(5);
-*/
+
 
 //translate([ST_LINK_LEN+SH_BORDER,SH_SIZE-1.5*SH_BORDER,H_UNIT-HOLE_DEPTH + eps_2]) station_name();
 
@@ -339,12 +343,13 @@ translate([0,3*20,0]) servis_tunel(1,2);
 
 //biohazard_triangle();
 
-
+/*
 translate([0,1*20,0]) joint(2,2,2,1);
 translate([0,2*20,0]) joint(2,2,1,2);
 translate([0,3*20,0]) joint(3,2,2,1);
 translate([0,4*20,0]) joint(3,3,3,2);
 translate([0,5*20,0]) joint(3,2,1,0);
+*/
 
 /*
 for(i=[0:10])

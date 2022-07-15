@@ -64,3 +64,5 @@ mxx_s_cr = 4;
 mxx_s_ch = 5*mxx_l_hu;
 // station name len
 mxx_s_nl = 5*mxx_b_a+6*mxx_l_border;
+// station name thickness
+mxx_s_nt = 1;

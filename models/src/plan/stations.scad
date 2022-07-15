@@ -1,7 +1,7 @@
 include <../mxx_constants.scad>
 include <../qpp_lib.scad>
 
-module __station_name()
+module __station_name_plateau()
 {
     _X = mxx_s_nl;
     _Y = mxx_l_w;
@@ -9,19 +9,39 @@ module __station_name()
     _R = mxx_b_r+mxx_l_border;
 
     _b = mxx_l_border;
-    _x = _X - 2*_b;
-    _y = _Y - 2*_b;
+    _xy_off = _b + mxx_xy_tol/2;
+    _x = _X - 2*_b+mxx_xy_tol;
+    _y = _Y - 2*_b+mxx_xy_tol;
     _r = mxx_b_r;
+    _h_off = _h-mxx_s_nt;
     
     difference()
     {
         // main shape
         qpp_cylindrocube([_X,_Y,_h,_R], $fn=mxx_fn);
         // cut
-        translate([_b,_b,1])
+        translate([_xy_off,_xy_off,_h_off])
         qpp_cylindrocube([_x,_y,_h,_r], $fn=mxx_fn);
 
     }
+}
+
+// TODO make this multicolor
+module station_name(name="Prazskaja", font_size = 7, clr="blue")
+{
+
+    _x = mxx_s_nl - 2*mxx_l_border;
+    _y = mxx_l_w - 2*mxx_l_border;
+    _z = mxx_s_nt;
+    _r = mxx_b_r;
+    color(clr)
+        qpp_cylindrocube([_x,_y,_z,_r], $fn=mxx_fn);
+    
+    color("white")
+    translate([_x/2,_y/2,_z])
+        linear_extrude(_z)
+            text(name,valign="center", halign="center", size = font_size);
+
 }
 
 module __building_plateau(cols,rows=2)
@@ -86,7 +106,7 @@ module station(size=4)
     {
         // '-> station name segment
         translate([0,2*mxx_l_w-mxx_l_border,0])
-            __station_name();
+            __station_name_plateau();
         // '-> building grid
         __building_plateau(cols=size);
     }

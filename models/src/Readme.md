@@ -52,8 +52,9 @@ Directory hiearchy:
     - [x] todo make consequentive holes closer together
   - [x] redo the danger triangles
     - [x] include symbols from the `symbols.scad`
-  - [ ] redo stations
-    - [ ] unify the dimensions
+  - [x] redo stations
+    - [x] unify the dimensions
+    - [x] redo station names
   - [ ] redo (service) tunnels
 
 ### new tasks
@@ -66,3 +67,7 @@ Directory hiearchy:
   - [ ] model the destroyed ending
 - [ ] plan - danger triangles
   - [ ] create multicolor variant of triangles
+- [ ] plan - stations
+  - [ ] make station names multimaterial
+  - [ ] make stations caps for ideologies
+
