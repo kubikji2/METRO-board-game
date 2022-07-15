@@ -1,5 +1,6 @@
 include <../mxx_constants.scad>
 include <../qpp_lib.scad>
+include <buildings.scad>
 
 module __station_name_plateau()
 {
@@ -44,45 +45,6 @@ module station_name(name="Prazskaja", font_size = 7, clr="blue")
 
 }
 
-module __building_plateau(cols,rows=2)
-{
-
-    _x = cols*mxx_b_a + (cols+1)*mxx_l_border;
-    _y = rows*mxx_b_a + (rows+1)*mxx_l_border;
-    _z = mxx_l_hu;
-    _r = mxx_b_r+mxx_l_border;
-
-    difference()
-    {
-        qpp_cylindrocube([_x,_y,_z,_r], $fn=mxx_fn);
-        for(ci=[0:cols-1])
-        {
-            _xtf = ci*(mxx_l_w-mxx_l_border);
-            translate([_xtf,0,0])
-                __building_hole();
-            translate([_xtf,mxx_l_w-mxx_l_border,0])
-                __building_hole();
-        }
-    }
-
-    
-}
-
-module __building_hole()
-{
-
-    _h = mxx_l_hu;
-    _a = mxx_l_w;
-    _r = mxx_b_r;
-
-    // building hole
-    // centered to the left-down corrner      
-    translate([_a/2,_a/2,_h])
-        rotate([180,0,0])
-            building_base_hole();
-
-}
-
 // station module
 module station(size=4)
 {
@@ -108,7 +70,7 @@ module station(size=4)
         translate([0,2*mxx_l_w-mxx_l_border,0])
             __station_name_plateau();
         // '-> building grid
-        __building_plateau(cols=size);
+        __building_plateau(cols=size,rows=2);
     }
 
 }
