@@ -13,9 +13,11 @@ module base_triangle()
 }
 
 // separate geometry for the triangle connector
-module triangle_connector()
+module danger_triangle_connector()
 {
-        
+    _r = mxx_dt_cr;
+    _h = mxx_dt_ch;
+    cylinder(h=_h, r=_r, $fn=mxx_fn);
 }
 
 // danger triangle for the links

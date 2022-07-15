@@ -64,7 +64,7 @@ module __link_danger_segment(is_higher=true)
     _z = _huc*mxx_l_hu;
 
     _d = 2*mxx_dt_cr + mxx_xy_tol;
-    _h = mxx_dt_cdepth + mxx_z_tol + mxx_eps;
+    _h = mxx_dt_cdepth + mxx_eps;
     
     difference()
     {
