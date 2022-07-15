@@ -68,6 +68,7 @@ mxx_s_nt = 1;
 
 // tunel parameters
 // '-> radius
-mxx_t_r = mxx_b_a/2;
+mxx_t_r = mxx_b_a/2-mxx_l_border/2-mxx_xy_tol;
+mxx_t_R = mxx_t_r + mxx_l_border;
 // '-> length
 mxx_t_cl = mxx_l_w;

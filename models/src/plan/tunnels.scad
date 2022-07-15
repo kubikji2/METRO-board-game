@@ -8,9 +8,10 @@ module service_tunnel(length=3,width=2)
     _a = mxx_l_w-mxx_xy_tol;
     _t = mxx_l_hu-mxx_z_tol;
     _r = mxx_t_r;
+    _R = mxx_t_R;
 
     // tunnel connector, i.e. ring
-    qpp_ring(h=_t,r=_r, D=_a, $fn=mxx_fn);
+    qpp_ring(h=_t,r=_r, R=_R, $fn=mxx_fn);
 
     // tunnel link
     difference()

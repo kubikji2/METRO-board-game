@@ -26,7 +26,7 @@ module __link_connetor(reversed=false)
 // single link segment
 // '-> has hole defines whether the segment has hole for the building and the connector for possible side tunnel
 // '-> is higher defines whether the segment consists of three height unit, otherwise is just 2 units high 
-module __link_segment(has_hole=true, is_higher=true)
+module __link_segment(has_hole=true, is_higher=true, reversed=false, is_dividing=false)
 {
     _huc = 1 + (is_higher ? 1 : 0) + (has_hole ? 0 : 1);
     _h = _huc*mxx_l_hu - (has_hole ? mxx_z_tol : 0);
@@ -36,8 +36,19 @@ module __link_segment(has_hole=true, is_higher=true)
     {
         // main shape
         translate([-_a/2,-_a/2,0])
+        qpp_difference(is_dividing)
+        {
+            // main shape
             cube([_a,_a,_h]);
-        
+
+            // cut for the bordering segments
+            __x = mxx_l_border/2;
+            _tx = reversed ? -mxx_eps : _a-__x+mxx_eps;
+            __h = mxx_l_hu+mxx_z_tol;
+            _tz = _h-__h;
+            translate([_tx,-mxx_eps,_tz])
+                cube([__x+mxx_eps,_a+mxx_2eps,__h+mxx_eps]);
+        }
         // cylindrocube and additional stuff for the building
         building_base_hole();
         
@@ -46,8 +57,9 @@ module __link_segment(has_hole=true, is_higher=true)
     if (has_hole)
     {
         translate([0,0,_h])
-            cylinder(r=mxx_t_r, h=mxx_l_hu + mxx_z_tol, $fn=mxx_fn);
+            cylinder(r=mxx_t_r-mxx_xy_tol/2, h=mxx_l_hu + mxx_z_tol, $fn=mxx_fn);
     }
+    //%cylinder(r=mxx_t_r+mxx_l_border,h=2*_h);
 
     //%translate([-_a/2,-_a/2, 0])
     //    cube([_a,_a,mxx_l_hu*(is_higher ? 3 : 2)]);
@@ -105,7 +117,11 @@ module link(left_len=3, right_len=2, left_holes=2, right_holes=1, thick=false)
         translate([-_off,0,0])
         if (i<left_len)
         {
-            __link_segment(has_hole=(i > left_len-left_holes-1), is_higher=thick);
+            __link_segment(
+                has_hole=(i > left_len-left_holes-1),
+                is_higher=thick,
+                is_dividing=(i==left_holes-1),
+                reversed=true);
         }
         else if (left_len==i)
         {
@@ -116,7 +132,11 @@ module link(left_len=3, right_len=2, left_holes=2, right_holes=1, thick=false)
         translate([+_off,0,0])
         if (i<right_len)
         {
-            __link_segment(has_hole=(i > right_len-right_holes-1), is_higher=thick);
+            __link_segment(
+                has_hole=(i > right_len-right_holes-1),
+                is_higher=thick,
+                is_dividing=(i==right_holes-1),
+                reversed=false);
         }
         else if (right_len==i)
         {
