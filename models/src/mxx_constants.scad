@@ -49,6 +49,7 @@ mxx_dt_t = mxx_l_hu;
 // '-> triangle connector height
 mxx_dt_ch = 2*mxx_dt_cdepth - 2*mxx_z_tol;
 
+// danger names
 MXX_DT_BIOHAZARD = "biohazard";
 MXX_DT_RADIATION = "radiation";
 MXX_DT_ANOMALY   = "anomaly";
@@ -59,3 +60,7 @@ MXX_DT_DANGER    = "danger";
 // station parameters
 // connector radius
 mxx_s_cr = 4;
+// connector height
+mxx_s_ch = 5*mxx_l_hu;
+// station name len
+mxx_s_nl = 5*mxx_b_a+6*mxx_l_border;

@@ -8,7 +8,7 @@ module __link_connetor(reversed=false)
 {
     _a = mxx_l_w;
     _t = mxx_l_hu-mxx_z_tol;
-    _r = mxx_s_cr+mxx_xy_tol;
+    _r = mxx_s_cr;
     // ring
     qpp_ring(h=_t,r=_r, D=_a, $fn=mxx_fn);
 

@@ -26,10 +26,10 @@ module building_base_hole()
 
     translate([0,-mxx_b_a/2,0])
         resize([_sx, _sy, _sz])
-            sphere(r=1,$fn=mxx_fn);
+            sphere(r=1,$fn=60);
     
     translate([0,+mxx_b_a/2,0])
         resize([_sx, _sy, _sz])
-            sphere(r=1,$fn=mxx_fn);
+            sphere(r=1,$fn=60);
 
 }
