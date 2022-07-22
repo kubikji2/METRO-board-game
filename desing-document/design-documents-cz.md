@@ -386,10 +386,43 @@ Stanice je 3D vytištěný plastový dílek obdélnékového tvaru obsahující:
 - výstupek/výstupky pro napojení na tunely
 - rozhraní pro další přídavné díly (ideologie? sklad? místo pro parkování karavany?)
 
+### Tunely
+
+Tunely metra skryvaji ruzne nebezpeci a civilizovane stanice na obou jejich koncich zdaleka neznamenaji bezpecny pruchod. Na zacatku hry je kazdemu tunelu nahodne prirazena karta pruzkumu.
+
+Tunely delime na:
+- nezname		- dosud nenavstivena oblast, tunel muze byt slepy (z ruznych duvodu) nebo vest k dosud neobjevenym stanicim
+			- karta pruzkumu je neodhalena
+- prozkoumane (?)	- stanice na obou koncich tunelu jsou zname, mohou patrit stejnemu hraci nebo dvema ruznym
+			- karta pruzkumu je odhalena castecne
+- "bezpecne"		- karta pruzkumu zcela odhalena a oznacena jako vyresena, stale existuje 10% riziko - v METRU neni nikde zcela bezpecno
+
+
+#### Karta pruzkumu
+
+Popisuje stav tunelu a nastrahy, ktere ukryva. Ma X casti postupne doplnujicich detaily stavu tunelu. Ty pote usnadnuji hracum pruchod tunelem a pripadne vyreseni situace, ktera se v nem vyskytuje.
+Hraci mohou do tunelu vysilat pruzkumne expedice a kartu postupne odkryvat. Suskandu v METRU nikdo nezastavi, neni tak mozne utajit informace na karte, jakmile jsou jednou odhaleny.
+Kazda faze odhaleni karty specifikuje nutnou pripravu a snizuje riziko pruchodu karavan.
+Kartu muze odhalit uz prvni pruzkumna expedice, za cenu urciteho mnozstvi zasob, a pouze v tomto pripade muze situaci vyresit ihned - pokud ma spravne cleny a vybaveni. Instantni reseni ma na karte specifickou hodnotu - neodhaluje se zbytek, pouze prvni cast s tematem problemu.
+
+priklad struktury karty:
+	- neodhalena karta = 50% sance ztraceni karavany, neni mozne vyresit jednou expedici
+	- 1. odhalena cast = 30% sance ztraceni karavany pri vybaveni specifickym typem zasob (plynova maska v pripade toxickeho plynu), 50% riziko selhani expedice k vyreseni situace a mnozstvi nutnych/specifickych zasob (pokud je situace resitelna, male mnozstvi situaci muze byt bez reseni)
+	- 2. odhalena cast = 20% sance ztraceni karavany pri vybaveni specifickym typem zasob, 25% riziko selhani expedice
+
+Obecne varianty:
+- mutanti
+- zaval
+- toxicka mlha
+- ...
+
+
 ## Karavana
 
 - TODO: Co bude převážet?
   - Budou zásoby v každé stanici zvlášť?
+  
+- riziko ztraty se ridi odhalenosti karty pruzkumu tunelu po ceste
 
 ## Expedice
 
@@ -400,7 +433,9 @@ Expedice je skupina postav, které hráč v přípavě vybere.
 Jednotlivá povolání členů expedice pomohou k vyřešení nepředvídatelných situací.
 Každý člen expedice může nést dva předměty (náboje, filtry, jídlo apod.), které mohou být užitečné v nepředvídatelných situacích za zavřenými dveřmi.
 
+Expedice muze pouze odkryvat tunely a stanice, nebo se snazit okamzite resit situace v tunelech.
 
+Expedici muze vyslat spravce stanice sousedici s tunelem, ale i vzdalenejsi hrac. Resenim situaci v tunelech sousedicich se stanicemi ostatnich hracu pak ziskava vliv/reputaci/body/laskavosti/nepratelstvi
 
 
 ## Souboj o stanice
