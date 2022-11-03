@@ -250,6 +250,8 @@ V daném odvětví měla nějaké povolání, které ji může dávat nějakou s
 
 ### Povolání a jejich schopnosti
 
+IDEA: Postavy frakcí/ideologií v separátním balíčku. Běžné postavy schopnost "konexe N" - zahodit tuhle postavu, líznout N karet postav frakcí/ideologií, naverbovat postavu/postavy ideologií za nějakou komoditu
+
 #### Vojenská služba nebo policie
 
 Zkušenosti získané během služby předurčují dobrodruhy z této kategorie pro roli sběračů na povrchu.
