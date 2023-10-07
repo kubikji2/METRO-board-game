@@ -23,13 +23,20 @@ mxx_z_clrn = 0.25;
 mxx_hu = 2;
 // border width - basic border width
 mxx_bw = 2;
+// default building and inteface side
+mxx_a = 10;
 
 ///////////
 // links //
 ///////////
 
+// link interface height
+mxx_li_h = 10*mxx_hu;
+// link interface diameter
+mxx_li_d = mxx_a;
 
-// link interface parameters
+// link width
+mxx_l_w = mxx_a + 2*mxx_bw;
 
 // tunnel paramteres
 
