@@ -4,11 +4,17 @@ include <../../libs/solidpp/solidpp.scad>
 // include constants
 include <../metroxx-constants.scad>
 
+// returns link interface connection heigh
+function get_link_interface_connection_h() = mxx_hu - mxx_z_clrn;
+
+// return link interface offset in z-axis
+function get_link_interface_connection_z_off() = mxx_hu+mxx_z_clrn;
+
 // inner (stump_like) interface module
 module mxx_link_interface_inner()
 {
     // stopper height
-    _h = mxx_hu - mxx_z_clrn;
+    _h = get_link_interface_connection_h();
     // stopper diameter
     _d = mxx_l_w;
 
@@ -27,7 +33,7 @@ module mxx_link_interface_outer()
 {
     _d = mxx_li_d + mxx_xy_clrn;
     _D = mxx_l_w - mxx_xy_clrn;
-    _h = mxx_hu - mxx_z_clrn;
+    _h = get_link_interface_connection_h();
     
     translate([0,0,mxx_hu+mxx_z_clrn])
     {
@@ -47,8 +53,8 @@ module mxx_link_interface_outer()
 }
 
 // TESTING
-/*
+
 mxx_link_interface_inner();
 mxx_link_interface_outer()
-    cubepp([10,1,2]);
-*/
+    cubepp([10,1,get_link_interface_connection_h()]);
+

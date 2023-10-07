@@ -4,11 +4,14 @@ include <../../libs/solidpp/solidpp.scad>
 // include constants
 include <../metroxx-constants.scad>
 
+// returns tunnel interface connection heigh
+function get_tunnel_interface_connection_h() = mxx_hu - mxx_z_clrn;
+
 // outer tunnel interface
 module mxx_tunnel_interface_outer()
 {
 
-    _h = mxx_hu - mxx_z_clrn;
+    _h = get_tunnel_interface_connection_h();
     _d = mxx_ti_d + mxx_xy_clrn;
     _D = mxx_l_w - mxx_xy_clrn;
 
@@ -36,4 +39,4 @@ module mxx_tunnel_interface_inner()
 
 mxx_tunnel_interface_inner();
 mxx_tunnel_interface_outer()
-    cubepp([10,1,2]);
+    cubepp([10,1,get_tunnel_interface_connection_h()]);
