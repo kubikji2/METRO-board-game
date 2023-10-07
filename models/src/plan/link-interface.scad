@@ -16,7 +16,7 @@ module mxx_link_interface_inner()
     // stopper height
     _h = get_link_interface_connection_h();
     // stopper diameter
-    _d = mxx_l_w;
+    _d = mxx_l_w - mxx_xy_clrn;
 
     // stump height
     _H = mxx_li_h;

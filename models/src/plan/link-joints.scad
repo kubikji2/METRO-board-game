@@ -4,6 +4,7 @@ include <../metroxx-constants.scad>
 include <../../libs/solidpp/solidpp.scad>
 // interafaces
 use <link-interface.scad>
+use <danger-triangle-interface.scad>
 
 module __station_interface_cut()
 {
@@ -28,6 +29,8 @@ module regular_station_joint(has_cut=false)
         }
 
         // TODO adding hole for danger information
+        //translate([0,0,_z]) 
+        //    mxx_danger_triangle_hole();
     }
 
     // adding interface
@@ -56,3 +59,4 @@ module interchange_station_joint()
 
 // TESTING
 interchange_station_joint();
+//regular_station_joint();
