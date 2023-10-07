@@ -28,9 +28,9 @@ module regular_station_joint(has_cut=false)
             __station_interface_cut();
         }
 
-        // TODO adding hole for danger information
-        //translate([0,0,_z]) 
-        //    mxx_danger_triangle_hole();
+        // adding hole for danger information
+        translate([0,0,_z]) 
+            mxx_danger_triangle_hole();
     }
 
     // adding interface
