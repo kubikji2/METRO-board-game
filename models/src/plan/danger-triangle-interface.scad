@@ -12,7 +12,7 @@ module danger_triangle_hole()
 
     translate([0,0,mxx_eps])
     {
-        cylinderpp(d=_d, h=_h+2*eps, align="Z");
+        cylinderpp(d=_d, h=_h+2*mxx_eps, align="Z");
     }
 }
 
