@@ -38,6 +38,20 @@ mxx_li_d = mxx_a;
 // link width
 mxx_l_w = mxx_a + 2*mxx_bw;
 
+// number of tunnels
+mxx_n_tunnels = 3;
+
+/////////////
+// tunnels //
+/////////////
+
+// tunnels interface height
+mxx_ti_h = mxx_hu;
+// tunnels interface diameter
+mxx_ti_d = mxx_a;
+
+
+
 // tunnel paramteres
 
 // tunnel interface parameters

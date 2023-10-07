@@ -53,8 +53,6 @@ module mxx_link_interface_outer()
 }
 
 // TESTING
-
 mxx_link_interface_inner();
 mxx_link_interface_outer()
     cubepp([10,1,get_link_interface_connection_h()]);
-
