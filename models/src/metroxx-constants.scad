@@ -56,6 +56,19 @@ mxx_ti_d = mxx_a;
 
 // tunnel interface parameters
 
+///////////////
+// buildings //
+///////////////
+
+// building side
+mxx_b_a = mxx_a;
+// building corner radius
+mxx_b_cr = 2;
+// building height
+mxx_b_h = 2*mxx_hu;
+// building offset
+mxx_b_h_off = 0.5*mxx_hu;
+
 // building parameters
 
 // build interface parameters
