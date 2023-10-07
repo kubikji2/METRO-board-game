@@ -4,7 +4,7 @@ include <../../libs/solidpp/solidpp.scad>
 // include constants
 include <../metroxx-constants.scad>
 
-module building_hole()
+module mxx_building_hole()
 {
     _mod_list = [round_edges(r=mxx_b_cr)];
     _size = add_vecs([mxx_b_a, mxx_b_a, mxx_b_h], [mxx_xy_clrn, mxx_xy_clrn, mxx_z_clrn]);

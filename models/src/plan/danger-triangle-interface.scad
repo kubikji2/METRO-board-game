@@ -5,7 +5,7 @@ include <../../libs/solidpp/solidpp.scad>
 include <../metroxx-constants.scad>
 
 
-module danger_triangle_hole()
+module mxx_danger_triangle_hole()
 {
     _d = mxx_dti_d + mxx_xy_clrn;
     _h = mxx_dti_h + mxx_z_clrn;
