@@ -17,5 +17,5 @@ module mxx_building_hole()
 difference()
 {
     cubepp([20,20,3],align="Z");
-    building_hole();
+    mxx_building_hole();
 }

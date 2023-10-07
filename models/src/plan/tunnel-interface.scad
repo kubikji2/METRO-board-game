@@ -14,7 +14,7 @@ function get_tunnel_interface_connection_outer_h() = mxx_hu - mxx_z_clrn;
 module mxx_tunnel_interface_outer()
 {
 
-    _h = get_tunnel_interface_connection_inner_h();
+    _h = get_tunnel_interface_connection_outer_h();
     _d = mxx_ti_d + mxx_xy_clrn;
     _D = mxx_l_w - mxx_xy_clrn;
 

@@ -31,7 +31,7 @@ mxx_a = 10;
 ///////////
 
 // link interface height
-mxx_li_h = 10*mxx_hu;
+mxx_li_h = 5*mxx_hu;
 // link interface diameter
 mxx_li_d = mxx_a;
 
@@ -54,6 +54,8 @@ mxx_n_tunnels = 3;
 mxx_ti_h = mxx_hu;
 // tunnels interface diameter
 mxx_ti_d = mxx_a;
+// tunnels interface length offset
+mxx_ti_l_off = 5;
 
 
 /////////////////////
@@ -86,3 +88,11 @@ mxx_b_h_off = 0.5*mxx_hu;
 
 // station name paramters
 
+//////////////
+// Stations //
+//////////////
+
+// station interface length
+mxx_si_l = 3*mxx_l_w;
+// station interface cut width
+mxx_si_c = 1/3 * mxx_l_w;
