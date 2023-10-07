@@ -37,6 +37,11 @@ mxx_li_d = mxx_a;
 
 // link width
 mxx_l_w = mxx_a + 2*mxx_bw;
+// link height
+mxx_l_h = 2*mxx_hu;
+
+// middle section length
+mxx_l_ml = 50;
 
 // number of tunnels
 mxx_n_tunnels = 3;
@@ -50,8 +55,6 @@ mxx_ti_h = mxx_hu;
 // tunnels interface diameter
 mxx_ti_d = mxx_a;
 
-// middle section length
-mxx_t_ml = 20;
 
 /////////////////////
 // danger triangle //

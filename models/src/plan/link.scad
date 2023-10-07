@@ -10,7 +10,7 @@ use <danger-triangle-interface.scad>
 
 
 function __link_get_center_size() = [mxx_l_ml, mxx_l_w, mxx_l_h];
-function __link_get_tunnel_size() = [mxx_l_w, mxx_l_w, mxx_l_h-mxx_hu];
+function __link_get_tunnel_size() = [mxx_l_w, mxx_l_w, mxx_l_h - get_tunnel_interface_connection_inner_h()];
 
 // basic link tunnel
 module __link_tunnel()
@@ -18,7 +18,7 @@ module __link_tunnel()
     // bottom
     mxx_tunnel_interface_inner();
     // top
-    _z = mxx_hu;
+    _z = get_tunnel_interface_connection_inner_h();
     translate([0,0,_z])
     difference()
     {
@@ -26,7 +26,7 @@ module __link_tunnel()
         _align = "z";
         cubepp(_size,align=_align);
         transform_to_spp(size = _size, align = _align, pos = "Z")
-            building_hole();
+            mxx_building_hole();
     } 
 
 }
@@ -42,14 +42,15 @@ module __link_center()
         
         // danger triangle part
         translate([0,0,mxx_l_h])
-            danger_triangle_hole();
+            mxx_danger_triangle_hole();
 
     }
 }
 
 module __link_connection()
 {
-    
+    mxx_link_interface_outer()
+        cubepp([mxx_l_w/2, mxx_l_w, get_link_interface_connection_h()], align="Xz");
 }
 
 
@@ -62,8 +63,8 @@ module link(n_building_slots=mxx_n_tunnels)
     // tunnels
     _x_off = __link_get_center_size()[0]/2;
     _dx = __link_get_tunnel_size()[0];
-    // replicate tunnels
-    for(i=[0:2])
+    // replicate tunnel segments
+    for(i=[0:n_building_slots-1])
     {
         _cur_off = _x_off + _dx/2 + i*_dx;
         mirrorpp([1,0,0], true)
@@ -72,8 +73,11 @@ module link(n_building_slots=mxx_n_tunnels)
     }
 
     // add connections
+    mirrorpp([1,0,0], true)
+        translate([_x_off + _dx*(n_building_slots+0.5),0,0])
+            __link_connection();
 
 }
 
-// testing
+// TESTING
 link();
