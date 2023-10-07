@@ -50,11 +50,19 @@ mxx_ti_h = mxx_hu;
 // tunnels interface diameter
 mxx_ti_d = mxx_a;
 
+// middle section length
+mxx_t_ml = 20;
 
+/////////////////////
+// danger triangle //
+/////////////////////
 
-// tunnel paramteres
+// danger triangle interface height
+mxx_dti_h = mxx_hu;
 
-// tunnel interface parameters
+// danger triangle interface diameter
+mxx_dti_d = mxx_a;
+
 
 ///////////////
 // buildings //
