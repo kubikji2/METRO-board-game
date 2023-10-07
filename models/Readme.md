@@ -43,3 +43,27 @@ For more information see [git manual](https://git-scm.com/book/en/v2/Git-Tools-S
   - geometries that can be used outside of this board-game should be implemented in Q++
 - create a single file containing all of the constants defining the game-board dimensions
 - include constants-file and libraries in files modeling the game elements
+
+## ROADMAPs
+
+- [ ] Add submodule update scripts
+- [ ] Define directory structure and constants file
+- [ ] Update to Solidpp
+  - [ ] Add submodule
+  - [ ] Remove Q++
+- [ ] Update directory structure
+  - [ ] Create directory structure and constants file
+  - [ ] Sort the filess
+- [ ] Update links
+  - [ ] Make all links with 3 tunel-slots for each station
+  - [ ] Enable connecting all 3 tunel-slots at the same time
+- [ ] Update station
+  - [ ] Create own model for station name
+  - [ ] Create station building slots
+  - [ ] Create joint for the station name ans station building slots and possible danger
+- [ ] Update tunels
+  - [ ] Make a selection of tunnels
+- [ ] Update dangers
+  - [ ] Make dangers single/multicolor options
+- [ ] Update buildings and building-like fills
+  - [ ] Make a selection of buildings
