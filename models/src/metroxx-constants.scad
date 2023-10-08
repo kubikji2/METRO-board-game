@@ -41,7 +41,7 @@ mxx_l_w = mxx_a + 2*mxx_bw;
 mxx_l_h = 2*mxx_hu;
 
 // middle section length
-mxx_l_ml = 50;
+mxx_l_ml = 30;
 
 // number of tunnels
 mxx_n_tunnels = 3;
@@ -63,7 +63,7 @@ mxx_ti_l_off = 5;
 /////////////////////
 
 // danger triangle interface height
-mxx_dti_h = mxx_hu;
+mxx_dti_h = mxx_hu/2;
 
 // danger triangle interface diameter
 mxx_dti_d = mxx_a;
@@ -80,7 +80,7 @@ mxx_b_cr = 2;
 // building height
 mxx_b_h = 2*mxx_hu;
 // building offset
-mxx_b_h_off = 0.5*mxx_hu;
+mxx_bi_h = mxx_hu/2;
 
 // building parameters
 
@@ -96,3 +96,19 @@ mxx_b_h_off = 0.5*mxx_hu;
 mxx_si_l = 3*mxx_l_w;
 // station interface cut width
 mxx_si_c = 1/3 * mxx_l_w;
+
+// station label interface offset
+mxx_sli_l_off = 5;
+
+// station label lengh
+mxx_sl_l = 50;
+// station label width
+mxx_sl_w = mxx_b_a;
+// station label height off
+mxx_sl_h_off = mxx_hu/2;
+// station lable height
+mxx_sl_h = mxx_hu;
+
+
+
+mxx_slh_h = 3*mxx_hu;
