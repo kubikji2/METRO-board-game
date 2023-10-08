@@ -106,9 +106,11 @@ mxx_sl_l = 50;
 mxx_sl_w = mxx_b_a;
 // station label height off
 mxx_sl_h_off = mxx_hu/2;
-// station lable height
+// station label height
 mxx_sl_h = mxx_hu;
 
+// station label height
+mxx_sl_txt_h = 0.6;
 
-
+// station label holder height
 mxx_slh_h = 3*mxx_hu;

@@ -25,7 +25,7 @@ module station_label_holder()
 {
     _x = mxx_sl_l+2*mxx_bw;
     _y = mxx_sl_w + 2*mxx_bw;
-    _z = mxx_slh_h;
+    _z = mxx_sl_h;
     _size = [_x, _y, _z];
     
     difference()
