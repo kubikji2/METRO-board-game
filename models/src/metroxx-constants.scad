@@ -81,6 +81,8 @@ mxx_b_cr = 2;
 mxx_b_h = 2*mxx_hu;
 // building offset
 mxx_bi_h = mxx_hu/2;
+// building interface length offset
+mxx_bi_l_off = 5;
 
 // building parameters
 
