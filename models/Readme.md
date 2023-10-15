@@ -46,17 +46,17 @@ For more information see [git manual](https://git-scm.com/book/en/v2/Git-Tools-S
 
 ## ROADMAPs
 
-- [ ] Add submodule update scripts
+- [x] Add submodule update scripts
 - [ ] Define directory structure and constants file
 - [ ] Update to Solidpp
-  - [ ] Add submodule
-  - [ ] Remove Q++
+  - [x] Add submodule
+  - [ ] Remove Q++ dependency
 - [ ] Update directory structure
   - [ ] Create directory structure and constants file
   - [ ] Sort the filess
-- [ ] Update links
-  - [ ] Make all links with 3 tunel-slots for each station
-  - [ ] Enable connecting all 3 tunel-slots at the same time
+- [x] Update links
+  - [x] Make all links with 3 tunel-slots for each station
+  - [x] Enable connecting all 3 tunel-slots at the same time
 - [ ] Update station
   - [ ] Create own model for station name
   - [ ] Create station building slots

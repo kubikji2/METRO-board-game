@@ -1,4 +1,4 @@
-# Game-pieces hiearchy
+# [ARCHIVE] Game-pieces hiearchy
 
 Directory hiearchy:
 
