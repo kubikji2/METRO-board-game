@@ -67,9 +67,15 @@ module station_buildings_holder(n_cols, n_rows=2)
                     mxx_building_hole();                    
             }
         }
+
+        // top hole for making the model lighter
+        _mod_list = [round_edges(r=mxx_b_cr)];
+        translate(_t+[mxx_bw,0,-mxx_eps])
+            cubepp([n_cols*(mxx_b_a+mxx_bw) - mxx_bw, n_rows*(mxx_b_a+mxx_bw)-mxx_bw, mxx_hu],
+                    align="x", mod_list=_mod_list);
+    
     }
-
-
+    
 }
 
 
