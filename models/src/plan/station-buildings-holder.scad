@@ -46,7 +46,9 @@ module station_buildings_holder(n_cols, n_rows=2)
         _t = [get_station_buildings_interface_offset(),0,0];
         union()
         {
-            __station_building_interface();
+            // TODO fix the z-offset
+            translate([0,0,mxx_hu]) 
+                __station_building_interface();
             translate(_t)
                 __station_building_area(n_cols=n_cols, n_rows=n_rows);
         }

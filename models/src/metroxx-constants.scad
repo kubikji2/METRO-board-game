@@ -78,7 +78,7 @@ mxx_b_a = mxx_a;
 // building corner radius
 mxx_b_cr = 2;
 // building height
-mxx_b_h = 2*mxx_hu;
+mxx_b_h = 3*mxx_hu;
 // building offset
 mxx_bi_h = mxx_hu/2;
 // building interface length offset
