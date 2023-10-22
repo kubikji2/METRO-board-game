@@ -47,6 +47,12 @@ module station_label_holder()
         // drill hole for the station label
         translate([get_station_label_interface_offset()+_x/2,0,_z])
             station_label_hole();
+        
+        // top hole for making the model lighter
+        _mod_list = [round_edges(r=mxx_b_cr)];
+        translate([get_station_label_interface_offset()+mxx_bw,0,-mxx_eps])
+            cubepp([mxx_sl_l, mxx_sl_w, mxx_hu],
+                    align="x", mod_list=_mod_list);
     }   
 }
 
