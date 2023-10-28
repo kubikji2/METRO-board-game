@@ -4,6 +4,7 @@ use<link-joints.scad>
 use<station-buildings-holder.scad>
 use<station-label-holder.scad>
 use<station-label.scad>
+use<danger-triangles.scad>
 
 // model selection
 model = "link"; //["link", "tunnel", "danger-triangle", "station", "interchange", "station-name-holder", "station-buildings-holder", "building"]
@@ -16,6 +17,7 @@ n_rows = 1; //[1:1:2]
 
 // types of danger triangle if applicable
 // TODO
+danger_triangle_type = ""; // 
 
 // types of building if applicable
 // TODO
@@ -34,11 +36,12 @@ if (model == "link")
 else if (model=="tunnel")
 {
     tunnel(n_cols, n_rows);    
-    echo(str(model,"-", n_cols, "-", n_rows,".stl"));
+    echo(str(model, "-", n_cols, "-", n_rows, ".stl"));
 }
 else if (model=="danger-triangle")
 {
-    echo("DANGER TRIANGLE IS NOT IMPLEMENTED YET!");
+    danger_triangle(danger_triangle_type);
+    echo(str(model, "-", danger_triangle_type, ".stl"));
 }
 else if (model=="station")
 {
