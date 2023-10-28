@@ -23,8 +23,15 @@ module regular_station_joint(has_cut=false)
     {
         // adding cut if requested
         difference_if(has_cut)
-        {    
-            cubepp(_size, align="z");
+        {   
+            union()
+            {
+                // link connections
+                cubepp(_size, align="z");
+
+                // danger triangle reinforcements
+                cylinderpp(d=mxx_ti_d + 2*mxx_bw,h=_z);
+            }
             __station_interface_cut();
         }
 
@@ -58,5 +65,5 @@ module interchange_station_joint()
 }
 
 // TESTING
-interchange_station_joint();
-//regular_station_joint();
+//interchange_station_joint();
+regular_station_joint();
