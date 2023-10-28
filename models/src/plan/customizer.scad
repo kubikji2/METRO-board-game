@@ -16,8 +16,7 @@ n_cols = 3; //[1:1:5]
 n_rows = 1; //[1:1:2]
 
 // types of danger triangle if applicable
-// TODO
-danger_triangle_type = ""; // 
+danger_triangle_type = "uknown"; //["uknown", "general", "radiation", "psychological", "biohazzard"]
 
 // types of building if applicable
 // TODO
