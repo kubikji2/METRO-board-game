@@ -16,7 +16,10 @@ n_cols = 3; //[1:1:5]
 n_rows = 1; //[1:1:2]
 
 // types of danger triangle if applicable
-danger_triangle_type = "uknown"; //["uknown", "general", "radiation", "psychological", "biohazzard"]
+danger_triangle_type = "uknown"; //["uknown", "general", "radiation", "psychological", "biohazard", "combined"]
+
+// define whether is other than base color
+is_other_color = false;
 
 // types of building if applicable
 // TODO
@@ -39,8 +42,16 @@ else if (model=="tunnel")
 }
 else if (model=="danger-triangle")
 {
-    danger_triangle(danger_triangle_type);
-    echo(str(model, "-", danger_triangle_type, ".stl"));
+    if (is_other_color)
+    {
+        danger_triangle_symbol(danger_symbol);
+    }
+    else
+    {
+        danger_triangle(danger_triangle_type);    
+    }
+
+    echo(str(model, "-", danger_triangle_type, is_other_color ? "-symbol" : "s", ".stl"));
 }
 else if (model=="station")
 {

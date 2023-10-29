@@ -22,7 +22,7 @@ module __danger_triangle_body()
 }
 
 // possible triangle symbols are managed here
-module __danger_triangle_symbol(symbol)
+module danger_triangle_symbol(symbol)
 {   
     translate([0,0,mxx_dt_h-mxx_dt_s_h+mxx_eps])
     // manage symbols
@@ -65,7 +65,7 @@ module danger_triangle(symbol)
         __danger_triangle_body();
         
         // symbol cutout
-        __danger_triangle_symbol(symbol=symbol);
+        danger_triangle_symbol(symbol=symbol);
     }
     
     // adding interfaces
