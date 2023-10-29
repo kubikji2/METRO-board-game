@@ -8,21 +8,21 @@ use <symbols.scad>
 // danger triangle radiation symbol
 module danger_triangle_radiation_symbol()
 {
-    radiation_symbol(d=mxx_dt_s_d, h=mxx_dt_s_h);
+    radiation_symbol(d=mxx_dt_s_d, h=mxx_dt_s_h+0.001);
 }
 
 
 // danger triangle biohazard symbol
 module danger_triangle_biohazard_symbol()
 {
-    biohazard_symbol(d=mxx_dt_s_d, h=mxx_dt_s_h);
+    biohazard_symbol(d=mxx_dt_s_d, h=mxx_dt_s_h+0.001);
 }
 
 
 // wierd combination of radiation and biohazard
 module danger_triangle_combined_danger_symbol()
 {
-    combined_danger_symbol(d=mxx_dt_s_d, h=mxx_dt_s_h);
+    combined_danger_symbol(d=mxx_dt_s_d, h=mxx_dt_s_h+0.001);
 }
 
 

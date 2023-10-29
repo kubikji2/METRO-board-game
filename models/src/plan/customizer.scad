@@ -44,14 +44,14 @@ else if (model=="danger-triangle")
 {
     if (is_other_color)
     {
-        danger_triangle_symbol(danger_symbol);
+        danger_triangle_symbol(danger_triangle_type);
     }
     else
     {
         danger_triangle(danger_triangle_type);    
     }
 
-    echo(str(model, "-", danger_triangle_type, is_other_color ? "-symbol" : "s", ".stl"));
+    echo(str(model, "-", danger_triangle_type, is_other_color ? "-symbol" : "", ".stl"));
 }
 else if (model=="station")
 {

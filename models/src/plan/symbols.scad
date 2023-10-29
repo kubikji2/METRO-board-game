@@ -27,7 +27,7 @@ module combined_danger_symbol(d=mxx_dt_s_d, h=mxx_dt_s_h)
     {
         biohazard_symbol(d=d, h=h);
         translate([0, 0, -mxx_eps])
-            radiation_symbol(r=r, h=h+mxx_2eps);
+            radiation_symbol(d=d, h=h+mxx_2eps);
     }
 
     difference() 
