@@ -1,9 +1,9 @@
 // metro constants
-include <../metroxx-constants>
+include <../metroxx-constants.scad>
 
 // biohazard and radiation symbols
-include <../../libs/biohazard-symbol.scad>
-include <../../libs/radiation-symbol.scad>
+use <../../libs/biohazard-symbol.scad>
+use <../../libs/radiation-symbol.scad>
 
 
 // radiation symbol
@@ -21,7 +21,7 @@ module biohazard_symbol(d=mxx_dt_s_d, h=mxx_dt_s_h)
 
 
 // wierd combination of radiation and biohazard
-module combined_danger(d=mxx_dt_s_d, h=mxx_dt_s_h)
+module combined_danger_symbol(d=mxx_dt_s_d, h=mxx_dt_s_h)
 {
     difference() 
     {
@@ -41,7 +41,7 @@ module combined_danger(d=mxx_dt_s_d, h=mxx_dt_s_h)
 
 
 // mental anomaly symbol a.k.a. capital greek Psi
-module mental_anomaly_symbol(d=mxx_dt_s_d, h=mxx_dt_s_h)
+module psychological_danger_symbol(d=mxx_dt_s_d, h=mxx_dt_s_h)
 {
 
     _fs = 0.75*d;
