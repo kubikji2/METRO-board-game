@@ -68,6 +68,29 @@ mxx_dti_h = mxx_hu/2;
 // danger triangle interface diameter
 mxx_dti_d = mxx_a;
 
+// danger triangle diameter
+mxx_dt_d = mxx_dti_d / (cos(180/3));
+
+// danger triangle height
+mxx_dt_h = mxx_hu;
+
+// danger triangle rounding radius
+mxx_dt_cr = mxx_bw;
+
+// danger triangle symbol height
+mxx_dt_s_h = 0.6;
+
+// danger triangle symbol diameter
+mxx_dt_s_d = mxx_dti_d + mxx_dt_cr;
+
+// danger triangle danger typess
+DANGER_TRIANGLE_UKNOWN = "uknown";
+DANGER_TRIANGLE_RADIATION = "radiation";
+DANGER_TRIANGLE_BIOHAZARD = "biohazard";
+DANGER_TRIANGLE_DANGER = "general";
+DANGER_TRIANGLE_PSYCHOLOGICAL = "psychological";
+DANGER_TRIANGLE_COMBINED = "combined";
+
 
 ///////////////
 // buildings //
@@ -116,3 +139,5 @@ mxx_sl_txt_h = 0.6;
 
 // station label holder height
 mxx_slh_h = 3*mxx_hu;
+
+/////////////
