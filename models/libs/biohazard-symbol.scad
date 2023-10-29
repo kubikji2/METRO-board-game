@@ -14,7 +14,7 @@ __mxx_lib_bio_angles = [90,210,330];
 
 
 // base body of "tentacles" pair
-module __mxx_lib_bio_tentacle_pair_base(sf=1, h=1, fn=$fn)
+module __mxx_lib_bio_tentacle_pair_base(sf=1, h=1)
 {
     _C = sf*__mxx_lib_bio_C;
     _E = sf*__mxx_lib_bio_E;
@@ -23,7 +23,7 @@ module __mxx_lib_bio_tentacle_pair_base(sf=1, h=1, fn=$fn)
 
     difference(){
         translate([_E,0,0])
-            cylinder(d=_H, h=h, $fn=fn);
+            cylinder(d=_H, h=h);
         // the outer most cubioid cuts
         translate([_G,0,0-__mxx_lib_bio_eps])
             translate([_C/2,-_C/2,0])
@@ -33,7 +33,7 @@ module __mxx_lib_bio_tentacle_pair_base(sf=1, h=1, fn=$fn)
 
 
 // the all six "tentacles" cut
-module __mxx_lib_bio_tentacles_cut(sf=1, h=1, fn=$fn)
+module __mxx_lib_bio_tentacles_cut(sf=1, h=1)
 {
     _F = sf*__mxx_lib_bio_F;
     _G = sf*__mxx_lib_bio_G;
@@ -42,40 +42,40 @@ module __mxx_lib_bio_tentacles_cut(sf=1, h=1, fn=$fn)
     {
         rotate([0,0,_a])
             translate([_F,0,-__mxx_lib_bio_eps])
-                cylinder(d=_G,h=h+__mxx_lib_bio_eps,$fn=fn);
+                cylinder(d=_G,h=h+__mxx_lib_bio_eps);
     }
 }
 
 
 // all six "tentacles"
-module __mxx_lib_bio_tentacles_base(sf=1 ,h=1, fn=$fn)
+module __mxx_lib_bio_tentacles_base(sf=1 ,h=1)
 {
     for (_a=__mxx_lib_bio_angles)
     {
         rotate([0,0,_a])
-            __mxx_lib_bio_tentacle_pair_base(sf,h,fn);
+            __mxx_lib_bio_tentacle_pair_base(sf,h);
     }
 }
 
 
 // finalized outer part consisting of six "tentacles"
-module __mxx_lib_bio_tentacles(sf=1, h=1, fn=$fn)
+module __mxx_lib_bio_tentacles(sf=1, h=1)
 {
     difference()
     {
-        __mxx_lib_bio_tentacles_base(sf,h,fn);
-        __mxx_lib_bio_tentacles_cut(sf,h+2*__mxx_lib_bio_eps,fn);
+        __mxx_lib_bio_tentacles_base(sf,h);
+        __mxx_lib_bio_tentacles_cut(sf,h+2*__mxx_lib_bio_eps);
     }
 }
 
 // cut in the logo center
-module __mxx_lib_bio_inner_cut(sf=1, h=1, fn=$fn)
+module __mxx_lib_bio_inner_cut(sf=1, h=1)
 {   
     _A = sf*__mxx_lib_bio_A;
     _D = sf*__mxx_lib_bio_D;
 
     translate([0,0,-__mxx_lib_bio_eps])
-        cylinder(d=_D,h=h,$fn=fn);
+        cylinder(d=_D,h=h);
     
     for (_a=__mxx_lib_bio_angles)
     {
@@ -87,7 +87,7 @@ module __mxx_lib_bio_inner_cut(sf=1, h=1, fn=$fn)
 
 
 // annulus, kinda generic modul
-module __mxx_lib_bio_annulus(sf=1, h=1, fn=$fn, dr=0)
+module __mxx_lib_bio_annulus(sf=1, h=1, dr=0)
 {
     
     _A = sf*__mxx_lib_bio_A;
@@ -98,14 +98,14 @@ module __mxx_lib_bio_annulus(sf=1, h=1, fn=$fn, dr=0)
     _inner=_E-_A-dr;
     difference()
     {
-        cylinder(r=_outer,h=h,$fn=fn);
+        cylinder(r=_outer, h=h);
         translate([0,0,-__mxx_lib_bio_eps])
-            cylinder(r=_inner,h=h+2*__mxx_lib_bio_eps,$fn=fn);
+            cylinder(r=_inner, h=h+2*__mxx_lib_bio_eps);
     }
 }
 
 // finalized middle ring including cuts
-module __mxx_lib_bio_middle_ring(sf=1, h=1, fn=$fn)
+module __mxx_lib_bio_middle_ring(sf=1, h=1)
 {
 
     _A = sf*__mxx_lib_bio_A;
@@ -115,7 +115,7 @@ module __mxx_lib_bio_middle_ring(sf=1, h=1, fn=$fn)
     difference()
     {
         // from the middle ring...
-        __mxx_lib_bio_annulus(sf,h,fn);
+        __mxx_lib_bio_annulus(sf,h);
 
         // ... cut the segments next to the tentacles
         render()
@@ -129,7 +129,7 @@ module __mxx_lib_bio_middle_ring(sf=1, h=1, fn=$fn)
             for(_a=__mxx_lib_bio_angles){
                 rotate([0,0,_a])
                     translate([_F,0,-2*__mxx_lib_bio_eps])
-                        cylinder(d=_G-2*_A,h=h+4*__mxx_lib_bio_eps,$fn=fn);
+                        cylinder(d=_G-2*_A,h=h+4*__mxx_lib_bio_eps);
             }
         }
     }
@@ -139,8 +139,7 @@ module __mxx_lib_bio_middle_ring(sf=1, h=1, fn=$fn)
 // biohazard symbol based on the US law
 // '-> variable "r" defines the total radius of the symbol
 // '-> variable "h" defines the height of the logo
-// '-> variable "$fn" is just regular $fn
-module mxx_biohazard_symbol(r=0.5, d=undef, h=0.1, fn=$fn)
+module mxx_biohazard_symbol(r=0.5, d=undef, h=0.1)
 {
     
     _module_name = "[MXX-biohazard-symbol]";
@@ -156,10 +155,10 @@ module mxx_biohazard_symbol(r=0.5, d=undef, h=0.1, fn=$fn)
     
     difference()
     {
-        __mxx_lib_bio_tentacles(_sf,_h,fn);
-        __mxx_lib_bio_inner_cut(_sf, _h+2*__mxx_lib_bio_eps,fn);
+        __mxx_lib_bio_tentacles(_sf,_h);
+        __mxx_lib_bio_inner_cut(_sf, _h+2*__mxx_lib_bio_eps);
     }
-    __mxx_lib_bio_middle_ring(_sf,_h,fn);
+    __mxx_lib_bio_middle_ring(_sf,_h);
 
 }
 
