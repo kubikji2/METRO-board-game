@@ -32,7 +32,6 @@ module __mxx_lib_rad_fin(r, h)
 // radiation symbol based on the US law
 // '-> varible "r" or "d" defines symbol radius or diameter respectively
 // '-> variable "h" define the height of the symbol
-// '-> variable "$fn" is just regular $fn
 module mxx_radiation_symbol(r=0.5, d=undef, h=0.1)
 {
 

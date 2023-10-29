@@ -123,7 +123,7 @@ module __mxx_lib_bio_middle_ring(sf=1, h=1)
         {   
             // ... first take middle ring, saled up a bit
             translate([0,0,-__mxx_lib_bio_eps])
-                __mxx_lib_bio_annulus(sf,h+2*__mxx_lib_bio_eps,fn,dr=__mxx_lib_bio_eps);
+                __mxx_lib_bio_annulus(sf,h+2*__mxx_lib_bio_eps,dr=__mxx_lib_bio_eps);
             
             // ... the cut the circles
             for(_a=__mxx_lib_bio_angles){
