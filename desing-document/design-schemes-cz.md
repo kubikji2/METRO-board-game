@@ -1,5 +1,51 @@
 # METRO 20XX - Stolní hra založená na METRU 2033-2035
 
+```mermaid
+timeline
+    title Stanice
+    section první vstup s karavanou
+        vyhledat odpovídající kartu stanice a povrchu : odhalit kartu stanice : karta povrchu zůstává skrytá (na rubu cena průzkumu)
+        
+        karta stanice - lokace : odhalí obrázek : odhalí velikost -> umístit správný dílek stanice : odhalí stav -> umístit případné žetony na dílek (rubble = hod kostkou pro množství) : odhalí nutný počet bodů vlivu pro ovládnutí : odhalí bonusy stanice
+
+        karta stanice - mise a průzkum : určí hlavní misi stanice (souvislost se stavem, místem, etc.) (splnění = velký vliv) : určí vyloučené mission karty (typy/konkrétní?) : určí počet obecných mission karet -> nalíznout (+ vyměnit vyloučené) : určí přidanou cenu misí před splněním hlavní : určí přidanou cenu / odložení průzkumu povrchu před splněním hlavní : určí podmínky průchodu (jestli možný, co stojí)
+
+        (optional) karta stanice - ambush : přepadení obyvateli/mutanty / okamžitý event -> požadavky na karavanu
+
+    section neovládnutá stanice
+        získávání vlivu : hlavní mise (za danou cenu a podmínky) : mise z karet (před splněním hlavní za svoji + bonusovou cenu) : po splnění požadovaného vlivu ovládnutí
+
+        průzkum povrchu : za cenu uvedenou na kartě povrchu pokud možné (karta stanice může průzkum vyloučit nebo podmínit ovládnutím) : odhalit kartu povrchu (obrázek, popis lokace, bonusy)
+
+        průchod do dalšího tunelu : pokud možný, za danu cenu (viz karta stanice), vliv postav v karavaně na cenu průchodu : průchod dalšího tunelu bez průzkumu
+
+    section ovládnutá stanice
+        stavění hlídek do příslušných políček v tunelu
+
+        odstraňování a přidávání žetonů ve stanici : dané ceny pro typy rubble/budov (vliv bonusů stanice, postav na místě, připojení ke spřáteleným stanicím)
+
+        průzkum a budování v tunelu : pouze bližší polovina : odhalení kapacity bočních místností (umístit správný dílek), chodeb etc. (viz tunel)
+
+        vyslání stalkera na povrch : povrch musí být prozkoumaný (odhalená karta povrchu) : cena podle karty povrchu : na povrch jde postava (-> vliv vlastností) : zisk zdrojů podle parametrů na kartě povrchu (+ pozitivní bonusy) : rizika podle parametrů na kartě povrchu (- negativní bonusy)
+```
+```mermaid
+timeline
+    title Tunel
+    section průchod tunelem
+        neprozkoumaný tunel : hod kostkami (danger, event, délka) : I. (pokud zde zatím žádný není) nic / typ nebezpečí (danger type) / zával [nastavit pravděpodobnosti, zával výjimečně] [myšlenka je, že chodit neprozkoumaným tunelem je nebezpečné, pokud tam ještě není známý danger, může se teprve nějaký projevit] : II. tunel event - s nějakou pravděpodobností tunel event karta (pozitivní i negativní) (nalezené zásoby / štěně / přepadení / plyn / ...), vlastnosti eventu se můžou kombinovat s danger (značka na kartě) -> vynaložit effort -> zisk (pozitivní/negativní), damage : III. (jen při vstupu) délka tunelu (dokud tunel není prozkoumaný, časová anomalie? nebo jen s nějakou pravděpodobností) - ovlivní kolikrát se děje event
+
+        prozkoumaný tunel : tolik kroků, kolik je daná délka [jo?] : v každém kole event?
+
+    section průzkum tunelu
+        průzkum tunelu : karavanou, postupně tři pozice přiléhající ovládnuté stanici : event průzkum tunelu (možná událost + lokace) : propojovací šachta ( a) o x polí / b) do specifického tunelu) / volná pozice pro hlídku / místnost (parametry, mise, bonusy) / blokace? (nelze hlídka) / vzduchotěsné tveře (ochrana tunelu, stanice)
+
+    section obsazení
+        obsazení : potřeba vlastnit přiléhající stanici (pro bližší polovinu tunelu) : plnění misí, stavění hlídek, využívání pozic (průmysl, zemědělství)
+
+```
+
+
+
 # TODO: 
 pojmenování pro vliv
 
